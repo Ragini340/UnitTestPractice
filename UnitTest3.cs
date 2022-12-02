@@ -23,6 +23,11 @@ namespace UnitTestPractice
             Assert.AreEqual(numberType.getNumberType(primeService.Object, num), 
                 "Not Prime");
 
+            num = 9;
+            primeService.Setup(x => x.IsPrime(num)).Returns(false);
+            Assert.AreEqual(numberType.getNumberType(primeService.Object, num),
+                "Not Prime");
+
         }
     }
 }
